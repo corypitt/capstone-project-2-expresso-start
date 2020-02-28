@@ -3,6 +3,7 @@ const cors = require('cors');
 const errorHandler = require('errorhandler');
 const morgan = require('morgan');
 const express = require('express');
+const apiRouter = require('./apis/api');
 
 const app = express();
 
@@ -13,7 +14,7 @@ app.use(errorHandler());
 app.use(cors());
 app.use(morgan('dev'));
 
-
+app.use('/api', apiRouter);
 
 
 
